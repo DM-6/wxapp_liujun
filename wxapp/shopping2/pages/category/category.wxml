@@ -1,0 +1,11 @@
+<view class="main">
+    <view class="category-left">
+        <view wx:for="{{category}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-index="{{index}}" 
+              bindtap="switchCategory" class="cate-list {{curIndex===index?'on':''}}">
+            <text>{{item.name}}</text>
+        </view>
+    </view>
+    <scroll-view class="category-right">
+
+    </scroll-view>
+</view>

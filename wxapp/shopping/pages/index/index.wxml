@@ -1,0 +1,76 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class='hd'>
+    <image src='/images/goods1.png'> </image>
+    <navigator>
+      <image src='/images/cart2.png'></image>
+    </navigator>
+    <view>
+      <text>数量{{num}}</text>
+      <text class='add'>+</text>
+      <text>加入购物车</text>
+      <image src='/images/cart1.png'></image>
+    </view>
+    <view class='content'>
+      <text>{{has?'有货':'缺货'}}</text>
+      <text>{{goods[0].name}}</text>
+      <text>￥{{goods[0].price}}</text>
+    </view>
+  </view>
+
+  <view class='bd' wx:for="{{lists}}">
+    <text class='goodsinfo'>{{item.name}}</text>
+  </view>
+</view> -->
+<!-- <view class="main">
+  <view class="index-box">
+    <view class="box-img">
+      
+      <navigator class="a">
+        <image src="../../image/cart2.png"/>
+      </navigator>
+      <image src=""/>
+    </view>
+    <view class="index-select">
+      <text class="a">数量{{item.num}}</text>
+      <text class="index-box-down">-</text>
+      <text class="index-box-up">+</text>
+      <text class="index-box-add">加入购物车</text>
+      <image src="../../image/cart1.png"/>
+    </view>
+    <view class="index-item">
+      <view class="index-item-status">有货</view>
+      <view class="index-item-name">新梨花带雨</view>
+      <view class="index-item-price">￥0.01</view>
+    </view>
+  </view>
+</view> -->
+<view class="main">
+  <view class="goods-box">
+    <image class="goods-thumb" src="{{goods.image}}"></image>
+    <view class="goods-operation">
+      <text class="goods-operation-num">数量{{num}}</text>
+      <text class="goods-operation-add" bindtap="addCount">+</text>
+      <text class="goods-to-cart" bindtap="addToCart">加入购物车</text>
+      <image class="goods-cart-img" src="../../images/cart1.png"></image>
+    </view>
+    <image class="to-carts-icon" src="../../images/cart1.png" wx:if="{{show}}"></image>
+    <view class="goods-stock">{{goods.stock}}</view>
+    <view class="goods-title">{{goods.title}}</view>
+    <view class="goods-price">{{goods.price}}</view>
+    <navigator url="../cart/cart" open-type="switchTab">
+      <view class="carts-icon {{scaleCart?'on':''}}">
+        <image src="../../images/cart2.png"></image>
+        <text class="carts-icon-num" wx:if="{{hasCarts}}">{{totalNum}}</text>
+      </view>
+    </navigator>
+  </view>
+  <view class="goods-tab-box" >
+    <view class="goods-tab-nav {{selected==0?'on':''}}" data-index="0" bindtap='select'>商品详情</view>
+    <view class="goods-tab-nav {{selected==1?'on':''}}" data-index="1" bindtap='select'>产品参数</view>
+    <view class="goods-tab-nav {{selected==2?'on':''}}" data-index="2" bindtap='select'>售后保障</view>
+    <view class="goods-content" >
+    <view>{{selected==0?goods.detail:selected==1?goods.parameter:goods.service}}</view>
+    </view>
+  </view>
+</view>

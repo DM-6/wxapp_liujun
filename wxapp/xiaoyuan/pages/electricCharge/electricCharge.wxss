@@ -1,0 +1,12 @@
+.weui-msg-icon{
+    width: 180rpx;
+    height: 164rpx;
+}
+.weui-msg__desc{
+    font-size: 52rpx;
+    color: black;
+}
+.page{
+    height: 100vh;
+    background: white;
+}

@@ -1,0 +1,38 @@
+.cover {
+    position: relative;
+  }
+
+  .cover image, .cover video {
+    height: 38.2vh;
+  }
+
+  .cover .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 8px 16px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 5px 19px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 7%, rgba(0, 0, 0, 0.36) 100%);
+  }
+
+  .cover .header {
+    font-size: 36rpx;
+    font-weight: bold;
+    letter-spacing: 4rpx;
+  }
+
+  .cover .sub-header {
+    font-size: 26rpx;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 4rpx;
+  }
+
+  .cover .meta {
+    font-size: 26rpx;
+  }

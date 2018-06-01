@@ -1,0 +1,35 @@
+
+
+.story.white {
+  background: #ffffff;
+}
+
+.story .content {
+  display: flex;
+  flex-direction: column;
+  height: 38.2vh;
+  padding-top: 10%;
+  text-align: center;
+}
+
+.story .header {
+  font-size: 48rpx;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.story .sub-header {
+  font-size: 28rpx;
+  text-transform: uppercase;
+  letter-spacing: 6rpx;
+  margin-bottom: 8px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.story .description {
+  padding: 0 12%;
+}
+
+.story image, .story video {
+  height: 41.8vh;
+}

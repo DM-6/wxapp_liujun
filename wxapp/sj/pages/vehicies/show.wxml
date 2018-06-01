@@ -1,0 +1,72 @@
+<view class="section">
+  <view class="cover">
+    <image src="{{ entity.image }}" mode="aspectFill" />
+    <view class="content">
+      <view class="header">
+        {{ entity.header }}
+        <view class="sub-header">
+          {{ entity.sub_header }}
+        </view>
+      </view>
+      <view class="meta">{{ entity.meta.price }}</view>
+    </view>
+  </view>
+  <view class="spec">
+    <view class="item">
+      <view class="header">
+        二氧化碳排放
+      </view>
+      <view class="value">
+        <text>{{ entity.meta.carbon_dioxide }}</text>
+        克/公里
+      </view>
+    </view>
+    <view class="item">
+      <view class="header">
+        综合燃油
+      </view>
+      <view class="value">
+        <text>{{ entity.meta.fuel }}</text>
+        升/百公里
+      </view>
+    </view>
+  </view>
+  <view class="action">
+    <view class="description">{{ entity.description }}</view>
+    <button class="button primary" bindtap="testDrive">预约试驾</button>
+  </view>
+</view>
+<swiper class="section story white" indicator-dots="{{ true }}">
+  <block wx:for="{{ entity.meta.exterior_design }}">
+    <swiper-item>
+      <view class="content">
+        <view class="sub-header">外观</view>
+        <view class="header">{{ item.header }}</view>
+        <view class="description">{{ item.description }}</view>
+      </view>
+      <image
+        bindtap="preview"
+        data-slides="exterior_design"
+        data-index="{{ index }}"
+        src="{{ item.image }}"
+        mode="aspectFill" />
+    </swiper-item>
+  </block>
+</swiper>
+<swiper class="section story" indicator-dots="{{ true }}">
+  <block wx:for="{{ entity.meta.interior_design }}">
+    <swiper-item>
+      <view class="content">
+        <view class="sub-header">内饰</view>
+        <view class="header">{{ item.header }}</view>
+        <view class="description">{{ item.description }}</view>
+      </view>
+      <image
+        bindtap="preview"
+        data-slides="interior_design"
+        data-index="{{ index }}"
+        src="{{ item.image }}"
+        mode="aspectFill" />
+    </swiper-item>
+  </block>
+</swiper>

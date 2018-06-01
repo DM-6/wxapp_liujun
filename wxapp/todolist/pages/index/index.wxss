@@ -1,0 +1,105 @@
+.titleBar {
+  border-bottom: 1rpx solid #eee;
+  padding: 0 30rpx 10rpx;
+  display:flex;
+  align-items: center;
+}
+.titleBar .status {
+  flex: 1;
+}
+.titleBar .status text {
+  display: inline;
+  font-size: 12pt;
+  color: #999999;
+  padding: 10rpx -20rpx -10rpx 0;
+  margin-right: 15rpx;
+}
+/* 主元素拿到其他子元素本身该有的大小外，所有的空间 */
+.add {
+  /* flex: 1; */
+}
+.titleBar .status text.active {
+  color: #ca2100;
+}
+/* .classList.remove('active')
+.classList.add('active')
+dom 编程 */
+/* MVVM 时代 */
+/* 弹出层来做 移动端 小 z-index*/
+.addForm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: rgba(0,0,0,.4);
+}
+.addForm .addForm-div {
+  background: #fff;
+  padding: 30rpx;
+}
+.weui-input {
+  /* 当前的font-size  */
+  height: 2.58823529em;
+  min-height: 2.58823529em;
+  line-height: 2.58823529em;
+}
+.addForm .addForm-div .weui-input {
+  border: 1px solid #ccc;
+  border-radius: 5rpx;
+  padding: 5rpx 20rpx;
+  font-size: 12pt;
+  margin-bottom: 10rpx;
+}
+.weui-btn:first-child {
+  margin-top: 0;
+}
+.addForm .addForm-div .addForm-btn button {
+  margin-right: 15rpx;
+}
+.lists {
+  /* ? 0  */
+  height: 0;
+  flex: 1;
+  padding-top: 15rpx;
+  padding-bottom: 10rpx;
+}
+.lists .item {
+  border-bottom: 1px dotted #eee;
+  position: relative;
+  overflow: hidden;
+}
+.lists .item .content {
+  display: flex;
+  padding: 15rpx -30rpx;
+  align-items: center;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 694rpx;
+  z-index: 10;
+  background: #fff;
+}
+.lists .item icon {
+  padding: 15rpx 0 10rpx;
+}
+icon {
+  vertical-align: middle;
+}
+.list .item .time {
+  font-size: 9pt;
+  color: #999999;
+}
+.lists .item text {
+  font-size: 11pt;
+  color: #444444;
+  padding: 0 10rpx;
+}
+.lists .item .title {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* background:red; */
+}

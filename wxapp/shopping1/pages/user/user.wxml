@@ -1,0 +1,6 @@
+<view class="containner">
+    <view class="nav">
+        <button class="adress-btn">地址管理</button>
+    </view>
+</view>
+

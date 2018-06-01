@@ -1,0 +1,16 @@
+.spec {
+    display: flex;
+    border-bottom: 1px solid #ededed;
+    font-size: 24rpx;
+  }
+
+  .spec .item {
+      border-right: 1px solid #ededed;
+      width: 100%;
+      padding: 64rpx;
+    }
+
+    .spec .item .value text {
+      font-size: 60rpx;
+      margin-right: 8rpx;
+    }

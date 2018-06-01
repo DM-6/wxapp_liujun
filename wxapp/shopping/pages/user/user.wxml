@@ -1,0 +1,11 @@
+<!--pages/user/user.wxml-->
+<view class='main'>
+  <!-- 头像太大了 技巧 三个元素，头像 名字  关于 -->
+  <!-- 要做垂直居中 -->
+  <view class='header'>
+  <!-- 快速获得用户头像 -->
+    <open-data class="thumb" type="userAvatarUrl"></open-data>
+    <open-data class="name" lang="zh_CN" type="userNickName"></open-data>
+    <text class='about'>关于我们</text>
+  </view>
+</view>

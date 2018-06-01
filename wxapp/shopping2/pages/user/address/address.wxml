@@ -1,0 +1,15 @@
+<!--pages/user/address/address.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="container">
+        <view class="cell_bd">
+            <input class="weui-input" type="text" name="name" placeholder="姓名" value="{{name}}" />
+        </view>
+        <view class="cell_bd">
+            <input class="weui-input" type="text" name="tel" placeholder="电话号码" value="{{tel}}" />
+        </view>
+        <view class="cell_bd">
+            <input class="weui-input" type="text" name="addr" placeholder="详细地址" value="{{addr}}" />
+        </view>
+        <button class="weui-btn btn-primary" formType="submit">保存</button>
+    </view>
+</form>

@@ -1,0 +1,39 @@
+{
+  "pages": ["pages/home/home",
+    "pages/recharge/recharge",
+    "pages/index/index",
+    
+    "pages/logs/logs",
+    "pages/schoolCard/schoolCard",
+    "pages/electricCharge/electricCharge",
+    "pages/record/record"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#393A3F",
+    "navigationBarTitleText": "DM",
+    "navigationBarTextStyle": "white",
+    "backgroundColorTop": "#ebebeb",
+    "backgroundColorBottom": "#ebebeb"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#46C01B",
+    "backgroundColor": "#FCFCFC",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "课表",
+        "iconPath": "images/icon_index.png",
+        "selectedIconPath": "images/icon_index_hl.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "我的",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home_hl.png"
+      }
+    ]
+  }
+}

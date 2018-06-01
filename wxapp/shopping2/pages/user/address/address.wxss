@@ -1,0 +1,9 @@
+/* pages/user/address/address.wxss */
+@import '../../../styles/weui.wxss';
+.weui-input{
+    border-bottom: 1px solid #ccc;
+    margin-left: 20rpx;
+}
+.weui-btn{
+    margin: 20rpx 20rpx;
+}

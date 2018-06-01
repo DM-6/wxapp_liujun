@@ -1,0 +1,26 @@
+page, .main{
+    height: 100%;
+}
+.category-left{
+    float: left;
+    width: 150rpx;
+    height: 100%;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+}
+.category-left .cate-list{
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    border-left: 3px solid #fff;
+}
+.category-left .catelist.on{
+    border-color: #AB956D;
+    color: #AB956D;
+}
+.category-right{
+    float: right;
+    width: 600rpx;
+    height: 100%;
+    overflow: hidden;
+}

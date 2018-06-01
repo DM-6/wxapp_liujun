@@ -1,0 +1,40 @@
+{
+  "pages": ["pages/my/my",
+    "pages/index/index",
+    "pages/logs/logs",
+    
+    "pages/mall/mall"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小红书",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#9a9a9a",
+    "selectedColor": "#373737",
+    "borderStyle": "#333333",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/5.png",
+        "selectedIconPath": "images/8.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "iconPath": "images/9.png",
+        "selectedIconPath": "images/6.png",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/4.png",
+        "selectedIconPath": "images/7.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

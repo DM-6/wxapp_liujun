@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="titleBar">
+    <div class="status">
+      <!-- wxml 是模板 {{}}是在模板里扣一个占位符  {{data:数据状态}} 数据绑定 
+           动态的可编译的 活的
+           data是活的   通过setData可立即改变，只要状态一变，界面立即改变
+      -->
+      <!-- bindtap="showStatus"   绑定事件 -->
+      <text class="{{status=='1'?'active':''}}" data-status="1" bindtap="showStatus">全部</text>
+      <text class="{{status=='2'?'active':''}}" data-status="2" bindtap="showStatus">未完成</text>
+      <text class="{{status=='3'?'active':''}}" data-status="3" bindtap="showStatus">已完成</text>
+    </div>
+    <div class="add">
+      <button class="mini-btn" size="mini" type="warn" bindtap="addTodoShow">+添加</button>
+    </div>
+  </view>
+  <scroll-view scroll-y class="lists">
+    <view class="item" wx:for="{{lists}}" wx:key="index">
+      <div class="content">
+        <icon class="icon-small" bindtap="changeTodo" data-item="{{index}}" size="23" type="{{item.status === '1' ? 'success' : 'circle'}}"></icon>
+        <text class="title">{{item.title}}</text>
+        <text class="time">{{item.date}}</text>
+      </div>
+    </view>
+    <!-- <view class="item">
+      <div class="content">
+        <icon class="icon-small" size="23" type="circle"></icon>
+        <text class="title">邀请柔柔看电影</text>
+        <text class="time">刚刚</text>
+      </div>
+    </view> -->
+  </scroll-view>
+  <view class="addForm {{addShow?'hide':''}}">
+    <view class="addForm-div">
+      <input type="text" placeholder="请输入任务" class="weui-input" bindinput="setInput" value="{{addText}}"/>
+      <view class="addForm-btn">
+        <button type="warn" size="mini" bindtap="addTodo" class="weui-btn mini-btn">确定添加</button>
+        <button type="default" size="mini" bindtap="addTodoHide" class="weui-btn mini-btn">取消</button>
+      </view>
+    </view>
+  </view>
+</view>

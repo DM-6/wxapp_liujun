@@ -1,0 +1,66 @@
+<view class="cells__title">标题</view>
+<view class="cells cells_after-title">
+  <view class="cell cell_input">
+    <view class="cell__bd">
+      <input type="text" placeholder="标题" 
+      value="{{entity.title}}"   class="input" bindinput="onInputTitle"/>
+    </view>
+  </view>
+</view>
+<div class="cells__title">正文</div>
+<view class="cells cells_after-title">
+  <view class="cell">
+    <div class="cell__bd">
+      <textarea 
+      style="height:6em;"
+      value="{{entity.content}}"
+      class="textarea"
+      placeholder="正文"
+      bindinput="onInputContent"/>
+    </div>
+  </view>
+  <view class="cell">
+    <view class="cell__bd">
+      <view class="upload">
+        <view class="uploader__hd">
+          <view class="uploader__info">
+            1/{{images.length}}
+          </view>
+        </view>
+        <div class="uploader__bd">
+          <view class="uploader__files"  bindlongpress="deleteImage" data-index="{{index}}">
+            <block wx:for="{{images}}" wx:key="{{item.id}}">
+              <view class="uploader__file">
+                <image 
+                mode="aspectFill"
+                class="uploader__img"
+                src="{{item.path}}">
+                </image>
+              </view>
+            </block>
+          </view>
+          <view class="uploader__input-box">
+            <view class="uploader__input" bindtap="onChooseImage"></view>
+          </view>
+        </div>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cells__title">发布</view>
+<view class="cells cells_after-title">
+  <view class="cell cell_switch">
+    <view class="cell__bd">发布</view>
+    <view class="cell__ft">
+      <switch checked="{{entity.status == 'publish'}}" bindchange="onChangeStatus"/>
+    </view>
+  </view>
+</view>
+<view class="btn-area">
+  <button class="btn" 
+  disabled="{{!entity.title || !entity.content}}"
+  loading="{{loading}}"
+  type="primary"
+  bindtap="onTapSubmitButton">{{entity.status?'发布':'保存'}}</button>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+    <view class="container-in">
+        <navigator url="./address/address">
+            <view class="weui-cell address">
+                <text>地址管理</text>
+            </view>
+        </navigator>
+        <view wx:if="{{userInfo}}" class="cell__bd">
+            <view class="weui-cell">
+                {{userInfo.name}}
+            </view>
+            <view class="weui-cell">
+                {{userInfo.tel}}
+            </view>
+            <view class="weui-cell">
+                {{userInfo.addr}}
+            </view>
+        </view>
+    </view>
+
+</view>
