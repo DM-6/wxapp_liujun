@@ -1,0 +1,18 @@
+<template>
+  <view>
+  </view>
+</template>
+<script>
+  // wepy 在本地的node_modules 下
+  import wepy from 'wepy'
+  // 单页面组件
+  export default class Info extends wepy.page {
+    // 不是json , es6 class 
+    data = {
+    }
+  }
+
+</script>
+<style lang="less">
+
+</style>
