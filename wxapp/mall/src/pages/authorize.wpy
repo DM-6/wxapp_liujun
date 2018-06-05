@@ -20,6 +20,16 @@ export default class Authroize extends wepy.page {
   config = {
     navigationBarTitleText: '授权登录'
   }
+  
+  async onLoad(){
+    let res = await wepy.getSetting()
+    if((res.authSetting)['scope.userInfo']){    // authSetting  auth 授权
+      wepy.switchTab({
+        url: '/pages/home'
+      })
+    }     
+  }
+
   // async 对函数内部有异步操作变同步的声明  
   async onGotUserInfo (e) {
     // console.log(e);
@@ -45,12 +55,25 @@ export default class Authroize extends wepy.page {
         });
 
         if(rlt.result){
-
+          let data = rlt.data;
+          if(data.openid){
+            wepy.setStorageSync(USER_SPECIAL_INFO,data.openid);
+          }
+          if(res.confirm){
+            wepy.switchTab({
+              url: '/pages/home'
+            })
+          }
         } else{
-          wepy.showModal({
+          let res = await wepy.showModal({
             title: 'appid有误',
             content: '授权失败'
-          })
+          });
+          if(res.confirm){
+            wepy.switchTab({
+              url: '/pages/home'
+            })
+          }
         }
       }
     }
