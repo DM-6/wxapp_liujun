@@ -1,18 +1,64 @@
 <template>
+  <!-- ? 小程序 wxml  组件 UI 编程很简单 low 切页面
+  wepy mpvue vue 先把页面拆分成组件
+  bombscreen ?不是内置的组件 是自定义的html标签 
+  component 
+  组件：将一组功能封装到一个component里面，且在页面上可以用自定义标签的形式引入
+  -->
+
   <view>
+    
   </view>
+  <!-- 首页列表功能 不在注意细节，而是分组件 -->
+  <!-- 业务组件 -->
+  <discover></discover>   
+  <!-- .sync 同步一下 -->
+  <bottomLoadMore :message='mes' :show.sync="showLoading"></bottomLoadMore>   
+  <!-- 组件 暂无数据的时的占位符 -->
+  <placeholder></placeholder>
+  <!-- 弹出广告 -->
+  <bombscreen></bombscreen>
+  
+  <!-- <comment>
+    <comment-input/>
+    <comment-list>
+      <comment-item/>
+      <comment-item/>
+      <comment-item/>
+    </comment-list>
+  </comment> -->
 </template>
+
 <script>
   // wepy 在本地的node_modules 下
-  import wepy from 'wepy'
+  import wepy from 'wepy';
+  // 将页面换一个视角（切页面），组件视角（粗，大体）
+  import Discover from '@/components/discover';
+  import BottomLoadMore from '@/components/bottomLoadMore';
+  import Placeholder from '@/components/placeholder';
+  import Bombscreen from '@/components/bomb_screen';
   // 单页面组件
   export default class Home extends wepy.page {
     // 不是json , es6 class 
     data = {
+      showLoading: false,
+      mes: '加载更多...'
+    }
+
+    onload(){
+      this.showLoading = true;
+    }
+
+    // 页面的组件构成 可多人协作，将复杂的细化，可读性更强
+    components = {
+      discover: Discover,
+      bottomLoadMore: BottomLoadMore,
+      placeholder: Placeholder,
+      bombscreen: Bombscreen
     }
   }
-
 </script>
+
 <style lang="less">
 
 </style>

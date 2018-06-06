@@ -1,0 +1,14 @@
+<template>
+    <view></view>
+</template>
+
+<script>
+    import wepy from 'wepy';
+    export default class Placeholder extends wepy.component{
+        props ={     // 传参：外界传来的数据
+            
+        }
+    }
+</script>
+
+<style lang="less"></style>

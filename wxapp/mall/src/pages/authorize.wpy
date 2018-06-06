@@ -15,7 +15,11 @@
 <script>
 import wepy from 'wepy';
 import api from '@/api/api';
-import {USER_INFO,USER_SPECIAL_INFO,SYSTEM_INFO} from '@/utils/constant';
+import {
+  USER_INFO,
+  USER_SPECIAL_INFO,
+  SYSTEM_INFO
+  } from '@/utils/constant';
 export default class Authroize extends wepy.page {
   config = {
     navigationBarTitleText: '授权登录'
