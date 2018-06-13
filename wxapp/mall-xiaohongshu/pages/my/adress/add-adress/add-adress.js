@@ -7,7 +7,7 @@ Page({
    */
   data: {
     addressValue: 0,   //地址下标
-    addressRange: ["北京","江西", "湖南", "上海","湖北","浙江", "福建", "重庆"],
+    addressRange: ["北京市","江西省", "湖南省", "上海市","湖北省","浙江省", "福建省", "重庆市"],
   },
   // 地区选择
   bindaddressChange:function(e){

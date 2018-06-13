@@ -2,10 +2,71 @@
     height: 100vh;
     background: #F4F8FB;
 }
+
+.weui{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #ffffff;
+}
+.adressList{
+    border-bottom: 1px solid#e6e6e6;
+}
+.adressInfo{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.editor{
+    width: 80rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.editor image{
+    width: 55rpx;
+    height: 55rpx;
+}
+.edit{
+    color: #666666;
+    margin-top: 10rpx;
+}
+.adr{
+    width: 450rpx;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin:0 50rpx;
+}
+.tel{
+    margin-left: 20rpx;
+}
+.receive{
+    color: #333333;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    font-size: 18px;
+    margin-bottom: 10rpx;
+}
+.adress{
+    color: #666666;
+}
+.success-icon{
+    width: 70rpx;
+    height: 70rpx;
+    position: relative; /*脱离文档流*/
+    top: 30%; /*偏移*/
+}
+
+
 .weui-cells{
     width: 100%;
     margin-top: 0;
-    position:fixed;
     bottom:0px;
     left:0px;
 }
@@ -24,22 +85,4 @@
 .weui-cell__ft_in-access {
     padding-right:13px;
     position:relative;
-}
-.weui{
-    width: 700rpx;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin-left: 10px;
-}
-.adressList{
-    width: 700rpx;
-    background: rgb(243, 220, 223);
-    font-size: 15px;
-    border-radius: 15px;
-}
-.adressInfo{
-    padding: 10px;
 }

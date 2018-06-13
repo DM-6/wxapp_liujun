@@ -1,22 +1,28 @@
 <view class="page"> 
     <view class="weui"> 
-        <view class="adressList">
-            <view class="adressInfo">
-                <view class="name">收件人：{{adressInfo.name}}</view>
-                <view class="tel">手机号码：{{adressInfo.tel}}</view>
-                <view class="IDcard">身份证号：{{adressInfo.IDcard}}</view>
-                <view class="adress">地址：{{adressInfo.adress}}{{adressInfo.doorAdress}}</view>
-            </view>
-        </view>
-        <view class="adressList">
-            <view class="adressInfo">
-                <view class="name">收件人：{{adressInfo.name}}</view>
-                <view class="tel">手机号码：{{adressInfo.tel}}</view>
-                <view class="IDcard">身份证号：{{adressInfo.IDcard}}</view>
-                <view class="adress">地址：{{adressInfo.adress}}{{adressInfo.doorAdress}}</view>
-            </view>
-        </view>
         <block wx:for="{{adressInfo}}" wx:key="{{item.id}}">
+            <view class="adressList">
+                <view class="adressInfo">
+                    <navigator class="editor" url="../adress/add-adress/add-adress">
+                        <image class="edit-icon" src="/images/write.png"/>
+                        <span class="edit">编辑</span>
+                    </navigator>
+                    <view class="adr">
+                        <view class="receive">
+                            <view class="name">{{item.name}}</view>
+                            <view class="tel">{{item.tel}}</view>
+                        </view>
+                        <view class="adress">{{item.adress}}{{item.doorAdress}}</view>
+                    </view>
+                    <view class="success">
+                        <image class="success-icon" src="/images/success.png"/>
+                    </view>
+                </view>
+            </view>
+        </block>
+
+
+        <!-- <block wx:for="{{adressInfo}}" wx:key="{{item.id}}">
             <view class="adressList">
                 <view class="adressInfo">
                     <view class="name">收件人：{{item.name}}</view>
@@ -25,7 +31,7 @@
                     <view class="adress">地址：{{item.adress}}{{item.doorAdress}}</view>
                 </view>
             </view>
-        </block>
+        </block> -->
         
     </view>
 
