@@ -1,0 +1,75 @@
+.page{
+    height: 100vh;
+    background: #f5f8fa;
+}
+.userinfo{
+    width: 100%;
+    height: 450rpx;
+    background: pink;
+}
+.head-img{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 30px;
+}
+.thumb{
+    width: 120rpx;
+    height: 120rpx;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.name{
+    margin: 30rpx;
+    color: #ffffff;
+}
+.userMessage{
+    display: flex;
+    justify-content: center; /*子元素水平居中*/
+    align-items: center; /*子元素垂直居中*/
+}
+.messageBox{
+    width: 650rpx;
+    height: 150rpx;
+}
+.focus, .fans, .praise-collect{
+    width: 200rpx;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    float: left;
+}
+.border{
+    color: #ffffff;
+    width: 20rpx;
+    height: 150rpx;
+    float: left;
+}
+.grade{
+    height: 70rpx;
+    color: #6d6d6d;
+    background: #ffffff;
+    display: flex;
+    justify-content: center; /*子元素水平居中*/
+    align-items: center; /*子元素垂直居中*/
+}
+.grade-icon{
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 10rpx;
+}
+.userDesc{
+    height: 120rpx;
+    color: #6d6d6d;
+    background: #ffffff;
+}
+.userDesc span{
+    margin-left: 30rpx;
+}

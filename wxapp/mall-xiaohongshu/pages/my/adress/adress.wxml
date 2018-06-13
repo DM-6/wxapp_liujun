@@ -1,0 +1,41 @@
+<view class="page"> 
+    <view class="weui"> 
+        <view class="adressList">
+            <view class="adressInfo">
+                <view class="name">收件人：{{adressInfo.name}}</view>
+                <view class="tel">手机号码：{{adressInfo.tel}}</view>
+                <view class="IDcard">身份证号：{{adressInfo.IDcard}}</view>
+                <view class="adress">地址：{{adressInfo.adress}}{{adressInfo.doorAdress}}</view>
+            </view>
+        </view>
+        <view class="adressList">
+            <view class="adressInfo">
+                <view class="name">收件人：{{adressInfo.name}}</view>
+                <view class="tel">手机号码：{{adressInfo.tel}}</view>
+                <view class="IDcard">身份证号：{{adressInfo.IDcard}}</view>
+                <view class="adress">地址：{{adressInfo.adress}}{{adressInfo.doorAdress}}</view>
+            </view>
+        </view>
+        <block wx:for="{{adressInfo}}" wx:key="{{item.id}}">
+            <view class="adressList">
+                <view class="adressInfo">
+                    <view class="name">收件人：{{item.name}}</view>
+                    <view class="tel">手机号码：{{item.tel}}</view>
+                    <view class="IDcard">身份证号：{{item.IDcard}}</view>
+                    <view class="adress">地址：{{item.adress}}{{item.doorAdress}}</view>
+                </view>
+            </view>
+        </block>
+        
+    </view>
+
+    <view class="weui-cells">
+        <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url="/pages/my/adress/add-adress/add-adress">
+            <view class="weui-cell__hd">
+                <image src="/images/add.png"/>
+            </view>
+            <view class="weui-cell__bd">添加收货地址</view>
+            <view class="weui-cell__ft  weui-cell__ft_in-access"></view>
+        </navigator>
+    </view>
+</view> 

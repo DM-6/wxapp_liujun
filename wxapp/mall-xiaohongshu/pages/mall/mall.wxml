@@ -1,0 +1,115 @@
+<view class="page">
+  <view class="searchBar">
+    <icon class="weui-icon-search" type="search" size="14"></icon>
+    <input  class="input" placeholder="搜索小红书的商品" bindtap="entrySearch" disabled />
+  </view>
+  <view class="list-block">
+    <block wx:for="{{detail}}" wx:key="{{item.id}}">
+      <navigator class="goods-block" url="../mall/goods-info/goods-info">
+        <view class="good-info">
+          <view class="good-img">
+            <image src="https://img.xiaohongshu.com/items/c1a0056ba9ba17b30446a0e040dc9e30@800w_90Q_1x_2o.jpg"/>
+          </view>
+          <span class="title">{{item.title}} </span>
+          <view class="desc">
+            <span>{{item.desc}}</span>
+          </view>
+        </view> 
+        <view class="good-handle">
+          <view class="price">
+            <span class="current-price">{{item.current_price}}</span>
+            <span class="original-price">{{item.original_price}}</span>
+          </view> 
+          <view class="sign">
+            <image class="sign-img" src="{{item.sign_img}}"/>
+          </view>
+        </view>
+      </navigator>
+    </block>
+
+    <!-- <navigator class="goods-block" url="../mall/goods-info/goods-info">
+      <view class="good-info">
+        <view class="good-img">
+          <image src="/images/perfume.jpg"/>
+        </view>
+        <span class="title">便携香水加香一天 </span>
+        <view class="desc">
+          <span>IAA.国际香氛</span>
+          <span>【香奈儿第四代调香师】 女士香水持久淡香小样正品高端果味香水</span>
+        </view>
+      </view> 
+      <view class="good-handle">
+        <view class="price">
+          <span class="current-price">￥89</span>
+          <span class="original-price">￥138</span>
+        </view> 
+        <view class="sign">
+          <image class="sign-img" src="/images/IAA.png"/>
+        </view>
+      </view>
+    </navigator>
+    <navigator class="goods-block" url="../mall/goods-info/goods-info">
+      <view class="good-info">
+        <view class="good-img">
+          <image src="/images/perfume.jpg"/>
+        </view>
+        <span class="title">便携香水加香一天 </span>
+        <view class="desc">
+          <span>IAA.国际香氛</span>
+          <span>【香奈儿第四代调香师】 女士香水持久淡香小样正品高端果味香水</span>
+        </view>
+      </view> 
+      <view class="good-handle">
+        <view class="price">
+          <span class="current-price">￥89</span>
+          <span class="original-price">￥138</span>
+        </view> 
+        <view class="sign">
+          <image class="sign-img" src="/images/IAA.png"/>
+        </view>
+      </view>
+    </navigator>
+    <navigator class="goods-block" url="../mall/goods-info/goods-info">
+      <view class="good-info">
+        <view class="good-img">
+          <image src="/images/perfume.jpg"/>
+        </view>
+        <span class="title">便携香水加香一天 </span>
+        <view class="desc">
+          <span>IAA.国际香氛</span>
+          <span>【香奈儿第四代调香师】 女士香水持久淡香小样正品高端果味香水</span>
+        </view>
+      </view> 
+      <view class="good-handle">
+        <view class="price">
+          <span class="current-price">￥89</span>
+          <span class="original-price">￥138</span>
+        </view> 
+        <view class="sign">
+          <image class="sign-img" src="/images/IAA.png"/>
+        </view>
+      </view>
+    </navigator>
+    <navigator class="goods-block" url="../mall/goods-info/goods-info">
+      <view class="good-info">
+        <view class="good-img">
+          <image src="/images/perfume.jpg"/>
+        </view>
+        <span class="title">便携香水加香一天 </span>
+        <view class="desc">
+          <span>IAA.国际香氛</span>
+          <span>【香奈儿第四代调香师】 女士香水持久淡香小样正品高端果味香水</span>
+        </view>
+      </view> 
+      <view class="good-handle">
+        <view class="price">
+          <span class="current-price">￥89</span>
+          <span class="original-price">￥138</span>
+        </view> 
+        <view class="sign">
+          <image class="sign-img" src="/images/IAA.png"/>
+        </view>
+      </view>
+    </navigator> -->
+  </view>
+</view>

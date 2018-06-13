@@ -1,0 +1,28 @@
+.page{
+    height: 100vh;
+    background: #f5f8fa;
+}
+.weui-cell{
+    font-size: 15px;
+}
+.weui-label{
+    color: #666666;
+}
+.care{
+    color: #ff2741;
+    font-size: 10px;
+    align-items: center;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.weui-btn-area{
+    margin: 0;
+    width: 100%;
+    position:fixed; 
+    bottom:0;
+}
+.weui-btn{
+    font-size: 15px;
+    color: #ffffff;
+    background: #ff2741;
+}

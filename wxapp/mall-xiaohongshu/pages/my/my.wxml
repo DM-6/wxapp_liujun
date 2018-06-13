@@ -1,0 +1,41 @@
+<view class="page">   
+    <view class="weui-cells weui-cells_after-title">
+        <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url="/pages/my/user/user">
+            <view class="userInfo">
+                <open-data class="thumb"type="userAvatarUrl"></open-data>
+                <open-data class="name" lang="zh_CN" type="userNickName"></open-data>
+            </view>
+        </navigator>
+    </view>
+
+    <view class="weui-cells">
+        <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url="/pages/my/collect/collect">
+            <view class="weui-cell__hd">
+                <image src="/images/round_favor_fill.png"/>
+            </view>
+            <view class="weui-cell__bd">我的收藏</view>
+            <view class="weui-cell__ft  weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url="/pages/my/order/order">
+            <view class="weui-cell__hd">
+                <image src="/images/menu-list.png" />
+            </view>
+            <view class="weui-cell__bd">我的订单</view>
+            <view class="weui-cell__ft  weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url="/pages/my/adress/adress">
+            <view class="weui-cell__hd">
+                <image src="/images/adress.png"/>
+            </view>
+            <view class="weui-cell__bd">收货地址</view>
+            <view class="weui-cell__ft  weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url="/pages/my/suggestion/suggestion">
+            <view class="weui-cell__hd">
+                <image src="/images/意见.png"/>
+            </view>
+            <view class="weui-cell__bd">意见反馈</view>
+            <view class="weui-cell__ft  weui-cell__ft_in-access"></view>
+        </navigator>
+    </view>
+</view> 

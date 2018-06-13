@@ -1,0 +1,22 @@
+.page{
+    height: 100vh;
+    background: #f5f8fa;
+}
+.weui-textarea{
+    font-size: 12px;
+    border-bottom: none;
+}
+.weui-uploader__title{
+    font-size: 15px;
+}
+.weui-btn-area{
+    margin: 0;
+    width: 100%;
+    position:fixed; 
+    bottom:0;
+}
+.weui-btn{
+    font-size: 18px;
+    color: #ffffff;
+    background: #ff2741;
+}

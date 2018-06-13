@@ -1,0 +1,60 @@
+
+<view class="page" >
+    <view class="page__hd">      
+    </view>
+    <view class="page__bd">
+        <form bindsubmit="submitdate">
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">收件人</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input class="weui-input" name="name" placeholder="请输入收件人的真实姓名"/>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">手机号码</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input class="weui-input" name="tel" placeholder="请输入11位手机号码"/>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label">选择省份</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindaddressChange" value="{{addressValue}}" range="{{addressRange}}">
+                            <view class="weui-select weui-select_in-select-after" name="adress">{{addressRange[addressValue]}}</view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">详细地址</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input class="weui-input" name="doorAdress" placeholder="街道门牌信息"/>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells__title care">海关政策要求，请填写身份证，加密保存，仅用于海关清关。</view>
+            <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">身份证号码</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <input class="weui-input" name="IDcard" placeholder="请输入收件人的身份证号码"/>
+                        </view>
+                    </view>
+                </view>
+
+            <view class="weui-btn-area">
+                <button class="weui-btn" form-type="submit">保存收货信息</button>
+            </view>
+        </form>
+    </view>
+</view>

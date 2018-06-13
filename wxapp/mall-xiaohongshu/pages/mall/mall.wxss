@@ -1,0 +1,84 @@
+.page{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+  }
+  
+  .searchBar{
+    margin: 20rpx 30rpx;
+    border-radius: 30px;
+    border:1px solid #f5f5f5;
+    background: #f5f5f5;
+  }
+  .weui-icon-search{
+    margin-left: 15rpx;
+    float: left;
+  }
+
+  .list-block{
+    background: #f5f8fa;
+    float: left;
+  }
+  .goods-block{
+    width: 145px;
+    height: 20%;
+    margin: 6px;
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+    float: left;
+    display: block;
+  }
+  .good-img image{
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+  }
+  .good-href{
+    display: inline-block;
+  }
+  .title{
+    font-size: 13px;
+    color: #333333;
+  }
+  .desc{
+    color: #767676; 
+    display: inline-block;
+  }
+  .desc span{
+    font-size: 13px;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin: 5px;
+  }
+  .good-handle{
+    width: 100%;
+    display: inline-block;
+  }
+  .price{
+    float: left;
+  }
+  /* .good-handle, .price{
+    display: flex;
+    flex-direction: row;
+  } */
+  .current-price{
+    color: #ff2741;
+    display: inline-block;
+  }
+  .original-price{
+    color: #999999;
+    text-decoration: line-through;
+  }
+  .sign image{
+    margin-right: 15px;
+    width: 30px;
+    height: 20px;
+    float: right;
+  }
+
+  

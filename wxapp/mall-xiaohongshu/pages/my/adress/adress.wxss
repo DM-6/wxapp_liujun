@@ -1,0 +1,45 @@
+.page{
+    height: 100vh;
+    background: #F4F8FB;
+}
+.weui-cells{
+    width: 100%;
+    margin-top: 0;
+    position:fixed;
+    bottom:0px;
+    left:0px;
+}
+.weui-cell__hd {
+    font-size: 0;
+}
+.weui-cell_access{
+    border-top: 1px solid #ffffff;
+}
+.weui-cell__hd image {
+    width: 70rpx;
+    height: 70rpx;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+.weui-cell__ft_in-access {
+    padding-right:13px;
+    position:relative;
+}
+.weui{
+    width: 700rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-left: 10px;
+}
+.adressList{
+    width: 700rpx;
+    background: rgb(243, 220, 223);
+    font-size: 15px;
+    border-radius: 15px;
+}
+.adressInfo{
+    padding: 10px;
+}

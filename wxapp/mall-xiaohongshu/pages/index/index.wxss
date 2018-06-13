@@ -1,0 +1,101 @@
+.page{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.searchBar{
+  margin: 20rpx 30rpx;
+  border-radius: 30px;
+  border:1px solid #f5f5f5;
+  background: #f5f5f5;
+}
+.weui-icon-search{
+  margin-left: 15rpx;
+  float: left;
+}
+
+.navBar{
+  height: 60rpx;
+  background: #fff;
+  border-top: 1px solid #fafafa;
+}
+.navBar-box{
+  width: 100%;
+  height: 60rpx;
+}
+.cate-list{
+  display: inline;
+  margin: 15rpx 22rpx;
+  text-align: center;
+  font-size: 14px;
+  color: #9d9d9d;
+}
+.navBar-box .cate-list.on {
+  color: #000000;
+  font-weight: bold;
+}
+
+.list-block{
+  background: #f5f8fa;
+  float: left;
+}
+.notes{
+  height:735px;
+  margin: 6px;
+  position: relative;
+  float: left;
+  display: block; 
+  overflow: hidden;
+}
+.note{
+  width: 145px;
+  margin: 5px;
+  background: #fff;
+  border-radius: 5px;
+  float: left;
+}
+.note-info span{
+  font-size: 13px;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 5px;
+}
+.home-note-img image{
+  width: 100%;
+  height: 150px;
+  border-radius: 5px;
+}
+.note-handle, .writer{
+  display: flex;
+  flex-direction: row;
+}
+.name{
+  margin-left: 10px;
+  text-align: center;
+  line-height: 38px;
+  font-size: 12px;
+}
+.writer image{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.like{
+  margin-left: 15px;
+  display: flex;
+}
+.like image{
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.like span{
+  font-size: 12px;
+  color: #9f9f9f;
+  margin: auto;
+} 
