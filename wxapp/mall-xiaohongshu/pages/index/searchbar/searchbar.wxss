@@ -1,1 +1,31 @@
-/* pages/searchbar/searchbar.wxss */
+.page{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+  }
+
+.head{
+    display: flex;
+    flex-direction: row;
+}
+.searchBar{
+    margin: 20rpx 30rpx;
+    border-radius: 30px;
+    border:1px solid #f5f5f5;
+    background: #f5f5f5;
+  }
+.weui-icon-search{
+    margin-left: 15rpx;
+    float: left;
+}
+.searchButton{
+    width: 150rpx;
+    
+}
+.search-btn{
+    font-size: 15px;
+    color: #999999;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
