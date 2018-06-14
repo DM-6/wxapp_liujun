@@ -10,15 +10,13 @@
     <view class="container">
         <view class="content" wx:if="{{!haveSerachLike}}">
             <view class="search-history">
-                <text class="zhhs">历史记录</text>
+                <text class="history-record">历史记录</text>
                 <view class="search-history-item" wx:for="{{historyRecord}}" wx:key="{{index}}">
-                    <image class="search-history-icon" src="/assets/icons/shizhong.png"></image>
                     <text>{{item.recordItem}}</text>
-                    <image data-index="{{index}}" class="delete" src="/assets/icons/delete.png" bindtap="deleteRecord"></image>
                 </view>
             </view>
             <view class="hot-search">
-                <text class="zhhs">热门搜索</text>
+                <text class="search-hot">热门搜索</text>
                 <view class="search-item">
                     <view class="hot-search-item" wx:for="{{hots}}" wx:key="{{item.id}}">
                     <view class="hot-item">
@@ -33,24 +31,10 @@
             </view>
         </view>
         <view wx:else class="search-like">
-        <view class="search-like-item" data-param="{{item.text}}" wx:for="{{searchLikeList}}" wx:key="{{index}}" bindtap="turnTo">
-            <image class="search-like-icon" src="/assets/icons/sousuo.png"></image>
+        <view class="search-like-item" data-param="{{item.text}}" wx:for="{{searchLikeList}}" wx:key="{{index}}">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
             <text>{{item.text}}</text>
-            <image data-index="{{index}}" class="turn" src="/assets/icons/turn.png"></image>
         </view>
         </view>
     </view>
 </view>
-
-<!-- <view class="page">
-    <view class="head">
-        <view class="searchBar">
-            <icon class="weui-icon-search" type="search" size="14"></icon>
-            <input type="text" class="input" placeholder="大家都在搜" bindtap="entrySearch" disabled />
-        </view>
-        <view class="searchButton">
-                <button class="search-btn" bindtap="search">搜索</button>
-        </view>
-    </view>
-    
-</view> -->

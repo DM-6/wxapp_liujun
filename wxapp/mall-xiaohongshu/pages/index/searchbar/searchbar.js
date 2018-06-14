@@ -6,60 +6,57 @@ Page({
     data: {
       historyRecord:[{
         id: '0',
-        recordItem:'这是一条最新的历史记录'
+        recordItem:' '
       }],
       hots:[{
         id:'01',
-        text:'国内不错的小众旅游地',
-        hotStatus:111
+        text:'上海',
+        hotStatus:132
       },{
         id:'02',
-        
-        text:'2018高考作文',
-        hotStatus:110
+        text:'父亲节礼物',
+        hotStatus:103
       },{
         id:'03',
-        text:'对骂群',
-        hotStatus:45
+        text:'cos',
+        hotStatus:43
       },{
         id:'04',
-        text:'华为吓人技术',
-        hotStatus:30
+        text:'vc水',
+        hotStatus:38
       },{
         id:'05',
-        text:'海贼王',
-        hotStatus:50
+        text:'丸子头',
+        hotStatus:45
       },{
         id:'06',
-        hotImg:'/images/hot.png',
-        text:'幸存者偏差',
-        hotStatus:102
+        text:'景甜',
+        hotStatus:92
       },{
         id:'07',
         hotImg:'/images/hot.png',
-        text:'勇士横扫骑士',
-        hotStatus:114
+        text:'来小红书看世界杯',
+        hotStatus:156
       },{
         id:'08',
-        hotImg:'/images/hot.png',
-        text:'参加今年的高考体检',
-        hotStatus:90
+        text:'APP',
+        hotStatus:85
       }],
       searchContext:'',
       haveSerachLike: false,
       searchLikeList: [],
       searchLikeAllList: [{
-        text: '勇士火箭'
+        text: '2018世界杯'
       }, {
-        text: '勇士马刺'
+        text: '世界杯赛程'
       }, {
-        text: '勇士队'
+        text: '世界杯狂欢色'
       }, {
-        text: '勇士鹈鹕'
+        text: '为世界杯干杯'
       }, {
-        text: '勇士火箭g3'
+        text: '世界杯球迷上线'
       }, {
-        text: '勇士火箭g4'
+        text: '世界杯没有时差'
       },{
         text:'...'
       }]
@@ -190,15 +187,6 @@ Page({
       wx.setStorage({
         key: 'historyRecord',
         data: filterArr
-      })
-    },
-    turnTo: function(e){
-      this.saveHistory({
-        id: 0,
-        recordItem: e.target.dataset.param
-      })
-      wx.navigateTo({
-        url: '../searchDetail/searchDetail'
       })
     },
     saveHistory (param) {
