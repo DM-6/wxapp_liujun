@@ -1,4 +1,48 @@
-<view class="page">
+<view class="search">
+    <view class="header">
+        <view class="header-top">    
+        <view class="nav-search">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <input type="text" placeholder="來小红书看世界杯" class="text-search" bindinput="changeSearch"  bindconfirm="bindconfirm" value="{{searchContext}}"/>
+        </view>
+        </view>
+    </view>
+    <view class="container">
+        <view class="content" wx:if="{{!haveSerachLike}}">
+            <view class="search-history">
+                <text class="zhhs">历史记录</text>
+                <view class="search-history-item" wx:for="{{historyRecord}}" wx:key="{{index}}">
+                    <image class="search-history-icon" src="/assets/icons/shizhong.png"></image>
+                    <text>{{item.recordItem}}</text>
+                    <image data-index="{{index}}" class="delete" src="/assets/icons/delete.png" bindtap="deleteRecord"></image>
+                </view>
+            </view>
+            <view class="hot-search">
+                <text class="zhhs">热门搜索</text>
+                <view class="search-item">
+                    <view class="hot-search-item" wx:for="{{hots}}" wx:key="{{item.id}}">
+                    <view class="hot-item">
+                        <view class="text">
+                            <image class="hot-img" src="{{item.hotImg}}" wx:if="{{item.hotImg}}"></image>
+                            <text>{{item.text}}</text>
+                        </view>
+                        <view class="hot-status" >{{hotStatus}}</view>
+                    </view>
+                    </view>         
+                </view>
+            </view>
+        </view>
+        <view wx:else class="search-like">
+        <view class="search-like-item" data-param="{{item.text}}" wx:for="{{searchLikeList}}" wx:key="{{index}}" bindtap="turnTo">
+            <image class="search-like-icon" src="/assets/icons/sousuo.png"></image>
+            <text>{{item.text}}</text>
+            <image data-index="{{index}}" class="turn" src="/assets/icons/turn.png"></image>
+        </view>
+        </view>
+    </view>
+</view>
+
+<!-- <view class="page">
     <view class="head">
         <view class="searchBar">
             <icon class="weui-icon-search" type="search" size="14"></icon>
@@ -9,4 +53,4 @@
         </view>
     </view>
     
-</view>
+</view> -->
