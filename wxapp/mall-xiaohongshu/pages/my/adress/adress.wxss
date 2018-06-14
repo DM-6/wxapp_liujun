@@ -28,12 +28,13 @@
     overflow: hidden;
 }
 .editor image{
-    width: 55rpx;
-    height: 55rpx;
+    width: 40rpx;
+    height: 40rpx;
 }
 .edit{
     color: #666666;
     margin-top: 10rpx;
+    font-size: 30rpx;
 }
 .adr{
     width: 450rpx;
@@ -57,8 +58,8 @@
     color: #666666;
 }
 .success-icon{
-    width: 70rpx;
-    height: 70rpx;
+    width: 50rpx;
+    height: 50rpx;
     position: relative; /*脱离文档流*/
     top: 30%; /*偏移*/
 }

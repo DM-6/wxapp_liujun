@@ -32,7 +32,7 @@
         </navigator>
         <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url="/pages/my/suggestion/suggestion">
             <view class="weui-cell__hd">
-                <image src="/images/意见.png"/>
+                <image src="/images/suggestion.png"/>
             </view>
             <view class="weui-cell__bd">意见反馈</view>
             <view class="weui-cell__ft  weui-cell__ft_in-access"></view>
