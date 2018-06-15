@@ -1,1 +1,3 @@
-/* pages/index/note-info/note-info.wxss */
+.page span{
+    font-size: 45rpx;
+}

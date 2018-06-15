@@ -148,7 +148,7 @@ Page({
         recordItem
       })
       wx.navigateTo({
-        url: '../searchDetail/searchDetail',
+        url: '../searchbar/searchbar',
       })
       this.setData({
         searchContext:''

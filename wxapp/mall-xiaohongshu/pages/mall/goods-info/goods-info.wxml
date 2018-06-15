@@ -1,2 +1,3 @@
-<!--pages/mall/goods-info/goods-info.wxml-->
-<text>pages/mall/goods-info/goods-info.wxml</text>
+ <view class="page">
+     <span>尚未完善</span>
+ </view>

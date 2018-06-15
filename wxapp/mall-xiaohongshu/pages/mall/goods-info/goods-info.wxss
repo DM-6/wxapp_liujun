@@ -1,1 +1,3 @@
-/* pages/mall/goods-info/goods-info.wxss */
+.page span{
+    font-size: 35rpx;
+}

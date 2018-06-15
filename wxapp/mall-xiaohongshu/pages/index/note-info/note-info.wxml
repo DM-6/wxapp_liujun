@@ -1,2 +1,3 @@
-<!--pages/index/note-info/note-info.wxml-->
-<text>pages/index/note-info/note-info.wxml</text>
+<view class="page">
+    <span>尚未完成</span>
+</view>

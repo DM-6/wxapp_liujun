@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    category: [
+    category: [       // 导航栏内容数据
       { name: '推荐', id: 'tuijian' },
       { name: '附近', id: 'fujin' },
       { name: '视频', id: 'shipin' },
@@ -32,17 +32,15 @@ Page({
     curIndex: 0,
     detail: [],
     toView: 'tuijian',
+    scroll: true
   },
-
   switchCategory(e) {
-    // console.log(e.currentTarget.dataset.index);
-    // console.log(e.currentTarget.dataset.id);
     this.setData({
-      curIndex: e.currentTarget.dataset.index ? e.currentTarget.dataset.index : 0,
-      toView: e.currentTarget.dataset.id,
+      curIndex: e.currentTarget.dataset.index?e.currentTarget.dataset.index:0,
+      toView: e.currentTarget.dataset.index,
     })
   },
-
+  // 搜索点击事件
   entrySearch(e) {
     wx.navigateTo({
       url: '../index/searchbar/searchbar',
@@ -55,14 +53,13 @@ Page({
     wx.setNavigationBarTitle({
       title: '小红书',
     })
+    // 请求数据
     wx.request({
       url: 'https://www.easy-mock.com/mock/5b1e17a0d4a14a3247a6cd6b/',
       success: (res) => {
-        // console.log(res.data)
         this.setData({
           detail: res.data.data
         })
-        console.log(this.data.detail)
       }
     })  
   },

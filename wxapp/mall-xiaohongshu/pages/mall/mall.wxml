@@ -1,14 +1,17 @@
 <view class="page">
-  <view class="searchBar">
-    <icon class="weui-icon-search" type="search" size="14"></icon>
-    <input  class="input" placeholder="搜索小红书的商品" bindtap="entrySearch" disabled />
+  <view class="search">
+    <view class="searchBar">
+      <icon class="weui-icon-search" type="search" size="14"></icon>
+      <input  class="input" placeholder="大家都在搜" bindtap="entrySearch" disabled />
+    </view>
   </view>
-  <view class="list-block">
-    <block wx:for="{{detail}}" wx:key="{{item.id}}">
+
+  <scroll-view class="list-block" scroll-y="true">
+    <block wx:for="{{goods}}" wx:key="{{item.id}}">
       <navigator class="goods-block" url="../mall/goods-info/goods-info">
         <view class="good-info">
           <view class="good-img">
-            <image src="https://img.xiaohongshu.com/items/c1a0056ba9ba17b30446a0e040dc9e30@800w_90Q_1x_2o.jpg"/>
+            <image src="{{item.good_img}}"/>
           </view>
           <span class="title">{{item.title}} </span>
           <view class="desc">
@@ -26,7 +29,7 @@
         </view>
       </navigator>
     </block>
-
+  </scroll-view>
     <!-- <navigator class="goods-block" url="../mall/goods-info/goods-info">
       <view class="good-info">
         <view class="good-img">
@@ -111,5 +114,4 @@
         </view>
       </view>
     </navigator> -->
-  </view>
 </view>

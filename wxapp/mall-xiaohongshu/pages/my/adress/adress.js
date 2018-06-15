@@ -16,19 +16,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '地址列表',
     });
-    var that=this;     //获取本地缓存
-    // wx.getStorage({
-    //   key:'adressInfo',
-    //   success:function(res){
-    //     console.log(res);
-    //     var adressInfo=[];
-    //     adressInfo.push(res.data);
-    //     that.setData({
-    //       adressInfo
-    //     })
-    //   }
-    // })
-  // this.data.adressInfo=app.globalData.adressInfo;
+    var that=this;     //获取地址信息
     that.setData({
       adressInfo:app.globalData.adressInfo
     })

@@ -1,1 +1,3 @@
-/* pages/index/note-writer/note-writer.wxss */
+.page span{
+    font-size: 45rpx;
+}

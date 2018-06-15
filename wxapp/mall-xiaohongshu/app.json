@@ -1,0 +1,51 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/mall/mall",
+    "pages/my/my",
+    "pages/index/searchbar/searchbar",
+    "pages/my/user/user",
+    "pages/my/collect/collect",
+    "pages/my/order/order",
+    "pages/my/adress/adress",
+    "pages/my/adress/add-adress/add-adress",
+    "pages/my/suggestion/suggestion",
+    "pages/index/note-info/note-info",
+    "pages/index/note-writer/note-writer",
+    "pages/mall/goods-info/goods-info"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#a0a0a0",
+    "selectedColor": "#333333",
+    "borderStyle": "#333333",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index-fill.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "iconPath": "images/mall.png",
+        "selectedIconPath": "images/mall-fill.png",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my-fill.png",
+        "text": "我的"
+      }
+    ]
+  }
+}
