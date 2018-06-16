@@ -1,13 +1,13 @@
 # “小红书”——给你安利几个小程序的“坑”
 
-标签（空格分隔）： 微信小程序
+微信小程序
 
 ---
 
 ![可爱](https://github.com/DM-6/wxapp_liujun/blob/master/image/timg.jpg)
 
 ## 写在前面
-　　小程序发布至今已有一年多时间，很多人都已经在小程序道路上狂奔。最近我也开始了学习小程序，学了一段时间后，想看看自己学到了多少，于是边学习边开始了我的第一个小程序。相信很多人都用过小红书吧，我可是被它安利了很多好东西呢，所以想着就仿写一个小红书吧。下面我就给大家“安利”几个我在写的过程中的“坑”。
+　　小程序发布至今已有一年多时间，很多人都已经在小程序道路上狂奔。最近我也开始了学习小程序，学了一段时间后，想看看自己学到了多少，于是边学习边开始了我的第一个小程序。相信很多人都用过小红书吧，我可是被它安利了很多好东西呢，所以想着就仿写一个小红书吧。下面我就给大家“安利”几个我在写的过程中的“坑”。  
 　　因为用的时间不多，功能有很多没有完善，页面写的不是很好看，请各位将就着看吧。╮(╯▽╰)╭
 　　
 ## 准备工作
@@ -24,8 +24,8 @@
 ## 遇到的几个问题
 
 ### 1、首页导航栏左右滑动
-效果图：
-![navBar](https://github.com/DM-6/wxapp_liujun/blob/master/image/navbar.gif)
+效果图：  
+![navBar](https://github.com/DM-6/wxapp_liujun/blob/master/image/navbar.gif)  
 　　这部分，是通过微信小程序的[scroll-view](https://developers.weixin.qq.com/miniprogram/dev/component/scroll-view.html)组件来完成的。代码如下：
 ```wxml
 <scroll-view class="navBar-box" scroll-x="true" style="white-space: nowrap; display:flex ">
@@ -34,7 +34,7 @@
     </view>
 </scroll-view>
 ```
-　　scroll-x="true"是设置其水平方向滑动，如果要设置垂直方向滑动，则使用scroll-y="true"。这里要注意的是，导航列表的每一项一定要设置宽度，其所有项的总宽度要小于scroll-view的宽度，否则列表项会垂直排列。因为导航列表项的个数比较多，这里使用了`wx:for`循环将列表项循环出来。这样减少了很多代码量，真是个好东西φ(゜▽゜*)♪
+　　scroll-x="true"是设置其水平方向滑动，如果要设置垂直方向滑动，则使用scroll-y="true"。这里要注意的是，导航列表的每一项一定要设置宽度，其所有项的总宽度要小于scroll-view的宽度，否则列表项会垂直排列。因为导航列表项的个数比较多，这里使用了`wx:for`循环将列表项循环出来。这样减少了很多代码量，真是个好东西φ(゜▽゜*)♪  
 　　
 一些使用scroll-view的注意事项：
 > 
@@ -44,8 +44,8 @@
 * 若要使用下拉刷新，请使用页面的滚动，而不是 scroll-view ，这样也能通过点击顶部状态栏回到页面顶部
 
 ### 2、首页文章列表随着点击导航栏列表改变
-效果图：
-![index](https://github.com/DM-6/wxapp_liujun/blob/master/image/index.gif)
+效果图：  
+![index](https://github.com/DM-6/wxapp_liujun/blob/master/image/index.gif)  
 　　这部分，是通过微信小程序的[swiper](https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html)组件来完成的。代码如下：
 ```wxml
 <swiper class="notes" current="{{toView}}">
@@ -88,8 +88,8 @@ wx.request({
   }
 })  
 ```
-　　通过`wx:for`循环，将每个文章页内容获取过来。在swiper-item里面使用scroll-view，使得页面可以滚动。
-![scroll-view](https://github.com/DM-6/wxapp_liujun/blob/master/image/scroll-view.gif)
+　　通过`wx:for`循环，将每个文章页内容获取过来。在swiper-item里面使用scroll-view，使得页面可以滚动。  
+![scroll-view](https://github.com/DM-6/wxapp_liujun/blob/master/image/scroll-view.gif)  
 　　内容超出一屏的时候，文章列表右边就会出现滚动条，这样也太丑了吧。那如何能让这个滚动条不出现呢，那就是让它隐藏掉。通过在全局样式中设置scroll隐藏,这样就好看多了。
 ```wxss
 ::-webkit-scrollbar{  
@@ -100,7 +100,7 @@ wx.request({
 ```
 　　
 ### 3、搜索页面的历史记录
-![search](https://github.com/DM-6/wxapp_liujun/blob/master/image/search.gif)
+![search](https://github.com/DM-6/wxapp_liujun/blob/master/image/search.gif)  
 　　在搜索框中输入要搜索的内容后，输入的内容会增加到历史记录里面。这里我用`wx：for`循环historyRecord，index值区分不同的搜索内容，recordItem是要输出在历史记录的值。代码如下：
 ```wxml
 <view class="search-history">
@@ -128,12 +128,12 @@ bindconfirm: function(e){
 ```
 　　
 ### 4、收货地址的添加
-![添加地址](https://github.com/DM-6/wxapp_liujun/blob/master/image/adress.gif)
+![添加地址](https://github.com/DM-6/wxapp_liujun/blob/master/image/adress.gif)  
 　　使用微信小程序提供的表单组件，很快就将添加地址的页面做好了。值得一提的就是[picker](https://developers.weixin.qq.com/miniprogram/dev/component/picker.html)。
 　　
 `picker`：从底部弹起的滚动选择器，现支持五种选择器，通过mode来区分，分别是普通选择器，多列选择器，时间选择器，日期选择器，省市区选择器，默认是普通选择器。它的一些属性，可点击查看[picker](https://developers.weixin.qq.com/miniprogram/dev/component/picker.html)。
 
-　　但是这块地方，表单验证及添加地址信息提交到地址列表中，有让我一阵子头疼。
+　　但是这块地方，表单验证及添加地址信息提交到地址列表中，有让我一阵子头疼。  
 　　首先就是表单验证，当你提交表单时触发`formSubmit`事件，对表单进行验证。代码如下：
 ```JavaScript
 formSubmit: function(e){
@@ -231,21 +231,13 @@ const app = getApp();
 ```
 
 #### 5、Easy-Mock数据接口的引入问题
-　　使用Easy-Mock伪造数据时，要按照规范书写，我在这里踩的"坑"就是：数据属性名，不能包含“-”（比如：note-image）。这样虽然数据接口能够创建，但是引入的时候就会报错，引入的数据为空。数据属性名可以用“_”（比如：note_image)。
+　　使用Easy-Mock伪造数据时，要按照规范书写，我在这里踩的"坑"就是：数据属性名，不能包含“-”（比如：note-image）。这样虽然数据接口能够创建，但是引入的时候就会报错，引入的数据为空。数据属性名可以用“_”（比如：note_image)。  
 ![错误](https://github.com/DM-6/wxapp_liujun/blob/master/image/errorEasy-mock.png)
 
 ## 总结
-　　以上便是我觉得比较容易掉坑，比较难的地方。还没有完成的功能，后续我会慢慢完善。对于小程序这方面，完全还是新手，给跟我一样的新手的一个建议，除了看[微信小程序开发文档](https://developers.weixin.qq.com/miniprogram/dev/)之外，也可以多看一看开源的小程序项目源码，遇到问题，可以看看别人是怎么解决的。
-　　本文为个人原创，如果你想对我的项目想要了解更多，可以查看我的[项目源码](https://github.com/DM-6/wxapp_liujun/tree/master/wxapp/mall-xiaohongshu)。希望这篇文章对你有帮助，欢迎大家点赞收藏~~
-![like](https://github.com/DM-6/wxapp_liujun/blob/master/image/like.jpg)　　
-　　本文如果有不好的地方，或者更好的方法，欢迎大佬们指出，一起学习。
-　　
+　　以上便是我觉得比较容易掉坑，比较难的地方。还没有完成的功能，后续我会慢慢完善。对于小程序这方面，完全还是新手，给跟我一样的新手的一个建议，除了看[微信小程序开发文档](https://developers.weixin.qq.com/miniprogram/dev/)之外，也可以多看一看开源的小程序项目源码，遇到问题，可以看看别人是怎么解决的。  
+　　本文为个人原创，如果你想对我的项目想要了解更多，可以查看我的[项目源码](https://github.com/DM-6/wxapp_liujun/tree/master/wxapp/mall-xiaohongshu)。希望这篇文章对你有帮助，欢迎大家点赞收藏~~  
+![like](https://github.com/DM-6/wxapp_liujun/blob/master/image/like.jpg)　　  
+　　本文如果有不好的地方，或者更好的方法，欢迎大佬们指出，一起学习。  
 　　wx：lj13684809399    
 　　                                                  
-
-
-
-
-
-
-
