@@ -8,7 +8,7 @@
 
 ## 写在前面
 　　小程序发布至今已有一年多时间，很多人都已经在小程序道路上狂奔。最近我也开始了学习小程序，学了一段时间后，想看看这段时间的学习效果，于是边学习边开始了我的第一个小程序。相信很多人都用过小红书吧，我可是被它安利了很多好东西呢，所以想着就仿写一个小红书的微信小程序吧。下面我就给大家“安利”几个我在写的过程中的“坑”。  
-　　因为花的时间不多，功能有很多没有完善，页面写的不是很好看，电脑也有些卡，录制的GIF图有些不流畅，请各位将就着看吧。╮(╯▽╰)╭
+　　因为花的时间不多，功能有很多没有完善，页面写的不是很好看，请各位将就着看啦。╮(╯▽╰)╭
 　　
 ## 准备工作
 1. 开发环境：WXML(HTML),WXSS(CSS),Javascript
@@ -49,32 +49,34 @@
 　　这部分，是通过微信小程序的[swiper](https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html)组件来完成的。代码如下：
 ```wxml
 <swiper class="notes" current="{{toView}}">
-      <swiper-item class="category" wx:for="{{detail}}"
-      wx:key="{{item.id}}">
-        <scroll-view class="cate-box" id="{{item.id}}" scroll-y>
-          <view class="note" wx:for="{{item.notes}}" wx:for-item="notes" wx:key="{{index}}">
-            <view class="note-info">
-              <navigator url="../index/note-info/note-info" >
-                <view class="home-note-img">
-                  <image src="{{notes.note_image}}"/>
-                </view>
-                <span>{{notes.title}}</span>
-              </navigator>
-            </view> 
-            <view class="note-handle">
-              <navigator class="writer" url="../index/note-writer/note-writer">
-                <image class="photo-img" src="{{notes.writer_img}}"/>
-                <span class="name">{{notes.writer}}</span>
-              </navigator>
-              <view class="like">
-                <image class="like-icon" src="/images/like.png"/>
-                <span>{{notes.like}}</span>
-              </view>
+  <swiper-item class="category" wx:for="{{detail}}"
+  wx:key="{{item.id}}">
+    <scroll-view class="cate-box" id="{{item.id}}" scroll-y>
+    
+      <view class="note" wx:for="{{item.notes}}" wx:for-item="notes" wx:key="{{index}}">
+        <view class="note-info">      
+          <navigator url="../index/note-info/note-info" >
+            <view class="home-note-img">
+              <image src="{{notes.note_image}}"/>
             </view>
+            <span>{{notes.title}}</span>
+          </navigator>
+        </view> 
+        <!-- 作者信息 -->
+        <view class="note-handle">
+          <navigator class="writer" url="../index/note-writer/note-writer">
+            <image class="photo-img" src="{{notes.writer_img}}"/>
+            <span class="name">{{notes.writer}}</span>
+          </navigator>
+          <view class="like">
+            <image class="like-icon" src="/images/like.png"/>
+            <span>{{notes.like}}</span>
           </view>
-        </scroll-view>
-      </swiper-item>
-  </swiper>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
 ```
 　　使用swiper组件，将所有文章列表包起来，每个swiper-item表示不同的列表模块。之前在导航栏各列表项绑定了不同的值，在点击导航时触发`switchCategory`事件，swiper-item根据导航点击的不同值，展示相对应的item文章列表。在这里我使用了Easy-Mock将页面的数据放在里面，然后用`wx:request`请求数据就行了。
 ```JavaScript
@@ -95,7 +97,7 @@ wx.request({
 ::-webkit-scrollbar{  
   height: 0;
   width: 0;
-  color: transparent;
+  color: transparent;   // 透明
 }
 ```
 　　
@@ -105,20 +107,21 @@ wx.request({
 ```wxml
 <view class="search-history">
     <text class="history-record">历史记录</text>
-    <view class="search-history-item" wx:for="{{historyRecord}}" wx:key="{{index}}">
+    
+    <view class="search-history-item" wx:for="{{historyRecord}}" wx:key="{{index}}">    
         <text>{{item.recordItem}}</text>
     </view>
 </view>
 ```
-　　因为文章的详情页还没有写，所以输入搜索内容后弹出的相似内容后，按enter键触发bindconfirm事件直接跳回了搜索页面，之前输入的搜索内容就会增加到历史记录里面。
+　　因为文章的详情页还没有写，所以输入搜索内容后弹出的相似内容后，按enter键触发bindconfirm事件，使用`wx.navigateTo`直接跳回了搜索页面，之前输入的搜索内容就会增加到历史记录里面。
 ```JavaScript
-bindconfirm: function(e){
+bindconfirm: function(e){      
   var recordItem = e.detail.value;
   this.saveHistory({
     id: 0,
     recordItem
   })
-  wx.navigateTo({
+  wx.navigateTo({      //跳转到搜索页面
     url: '../searchbar/searchbar',
   })
   this.setData({
@@ -132,15 +135,28 @@ bindconfirm: function(e){
 　　使用微信小程序提供的表单组件，很快就将添加地址的页面做好了。值得一提的就是[picker](https://developers.weixin.qq.com/miniprogram/dev/component/picker.html)。
 　　
 `picker`：从底部弹起的滚动选择器，现支持五种选择器，通过mode来区分，分别是普通选择器，多列选择器，时间选择器，日期选择器，省市区选择器，默认是普通选择器。它的一些属性，可点击查看[picker](https://developers.weixin.qq.com/miniprogram/dev/component/picker.html)。
+```wxml
+<!-- wxml -->
+<picker bindchange="bindaddressChange" value="{{addressValue}}" range="{{addressRange}}">
+    <view class="weui-select weui-select_in-select-after" name="adress">{{addressRange[addressValue]}}</view>
+```   
+```JavaScript
+//  js 设置初始值
+ data: {
+    addressValue: 0,   //地址下标
+    addressRange: ["北京市","江西省", "湖南省", "上海市","湖北省","浙江省", "福建省", "重庆市"],
+  },
+</picker>
+```
 
 　　但是这块地方，表单验证及添加地址信息提交到地址列表中，有让我一阵子头疼。  
-　　首先就是表单验证，当你提交表单时触发`formSubmit`事件，对表单进行验证。代码如下：
+　　首先就是表单验证，当你提交表单时触发`formSubmit`事件，对表单进行验证。如果未输入内容或者输入内容格式有误，通过`wx.showModal()`给用户提示。代码如下：
 ```JavaScript
 formSubmit: function(e){
     var warn = "";
     var that = this;
     var flag = false;
-    if(!e.detail.value.name){
+    if(!e.detail.value.name){       //判断输入内容
       warn = "请填写收件人！";
     } else if(!e.detail.value.tel){
       warn = "请填写手机号码！";
@@ -162,7 +178,7 @@ formSubmit: function(e){
           url: '/pages/my/adress/adress'
         })
     }
-    if(flag==false){
+    if(flag==false){     
         wx.showModal({
         title: '提示',
         content:warn
@@ -178,15 +194,15 @@ formSubmit: function(e){
 ```JavaScript
 //添加地址信息到本地缓存   add-adress.js
 submitdate: function (event) {
-var adressInfo = event.detail.value;
-  wx.setStorage({
-    key: 'adressInfo',
-    data: adressInfo,
-    success: function (res){
-      wx.navigateTo({
-        url: '/pages/my/adress/adress'
-      })
-    }
+    var adressInfo = event.detail.value;
+    wx.setStorage({
+        key: 'adressInfo',
+        data: adressInfo,
+        success: function (res){
+          wx.navigateTo({
+            url: '/pages/my/adress/adress'
+          })
+        }
   })
 },
 //地址列表里获取缓存在本地的地址信息  adress.js  
@@ -203,7 +219,7 @@ wx.getStorage({
   }
 })
 ```
-　　于是呢，就去请教了几位大佬，看有什么方法可以解决这个问题。经过讨论，得出了解决办法，将添加的地址信息push到全局上去，将会然后在从全局里面获取，这样就不会将之前的数据覆盖。而且这样处理，代码量大大的减少了。
+　　于是呢，就去请教了几位大佬，看有什么方法可以解决这个问题。经过讨论，得出了解决办法：将添加的地址信息push到全局上去，将会然后在从全局里面获取，这样就不会将之前的数据覆盖。而且这样处理，代码量大大的减少了。
 代码如下：
 ```JavaScript
 // 定义globalData对应的全局变量   app.js

@@ -18,6 +18,7 @@
   <swiper class="notes" current="{{toView}}">
       <swiper-item class="category" wx:for="{{detail}}" wx:key="{{item.id}}">
         <scroll-view class="cate-box" id="{{item.id}}" scroll-y>
+        <!-- 文章封面内容 -->
           <view class="note" wx:for="{{item.notes}}" wx:for-item="notes" wx:key="{{index}}">
             <view class="note-info">
               <navigator url="../index/note-info/note-info" >
@@ -27,6 +28,7 @@
                 <span>{{notes.title}}</span>
               </navigator>
             </view> 
+            <!-- 作者信息 -->
             <view class="note-handle">
               <navigator class="writer" url="../index/note-writer/note-writer">
                 <image class="photo-img" src="{{notes.writer_img}}"/>
