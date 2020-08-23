@@ -254,6 +254,5 @@ const app = getApp();
 　　以上便是我觉得比较容易掉坑，比较难的地方。还有很多没有完成的功能，后续我会慢慢完善。对于小程序这方面，完全还是新手，给跟我一样的新手的一个建议，除了看[微信小程序开发文档](https://developers.weixin.qq.com/miniprogram/dev/)之外，也可以多看一看开源的小程序项目源码，遇到问题，可以看看别人是怎么解决的。各个社区也是很好的平台，可以将问题发布出来，大家一起解决。  
 　　本文为个人原创，如果你想对我的项目想要了解更多，可以查看我的[项目源码](https://github.com/DM-6/wxapp_liujun/tree/master/wxapp/mall-xiaohongshu)。希望这篇文章对你有帮助，欢迎大家点赞收藏~~  
 ![like](https://github.com/DM-6/wxapp_liujun/blob/master/image/like.jpg)　　  
-　　本文如果有不好的地方，或者更好的方法，欢迎大佬们指出，一起学习。  
-　　wx：lj13684809399    
+　　本文如果有不好的地方，或者更好的方法，欢迎大佬们指出，一起学习。    
 　　                                                  
